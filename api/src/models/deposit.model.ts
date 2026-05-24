@@ -1,4 +1,4 @@
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 
 export class Deposit implements IDeposit {
 	_id!: string;

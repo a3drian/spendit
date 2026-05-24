@@ -1,4 +1,4 @@
-# NetWorth
+# Spendit
 
 ## Credits
 

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { model, Schema } = mongoose;
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 
 const depositSchema = new Schema<IDeposit>(
 	{

@@ -4,7 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DeleteDepositDialogComponent } from '../../dialogs/delete-deposit-dialog/delete-deposit-dialog.component';
 import { ShowDepositDialogComponent } from '../../dialogs/show-deposit-dialog/show-deposit-dialog.component';
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 // rxjs:
 import { Subscription } from 'rxjs';
 // Services:

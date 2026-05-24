@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 // Models:
 import { DepositDTO } from 'src/app/models/Deposit';
 // Services:

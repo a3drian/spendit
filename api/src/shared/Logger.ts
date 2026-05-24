@@ -1,4 +1,4 @@
-// Shared:
+/* eslint-disable no-console */
 import { Color } from './Console';
 import { Constants } from './Constants';
 

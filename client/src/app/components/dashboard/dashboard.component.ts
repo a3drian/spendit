@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 // Components:
 import { ShowDepositDialogComponent } from '../dialogs/show-deposit-dialog/show-deposit-dialog.component';
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 import { IUser } from 'src/app/interfaces/IUser';
 // Models:
 import { Currency } from 'src/app/models/Currency';

@@ -1,1 +1,1 @@
-start cmd.exe /k "npm install net-worth-shared --save"
+start cmd.exe /k "npm install @a3drian/spendit-shared"

@@ -1,0 +1,61 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - add-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install "api" dependencies
+        working-directory: api
+        run: npm install
+        env:
+          PACKAGES_TOKEN: ${{secrets.PACKAGES_TOKEN}}
+
+      - name: Build and deploy "api"
+        working-directory: api
+        run: npm run deploy
+
+      - name: Install "client" dependencies
+        working-directory: client
+        run: npm install
+
+      - name: Create `environment` files
+        working-directory: client
+        run: |
+          echo "" > src/environments/environment.ts
+          echo "${{secrets.CLIENT_ENV}}" > src/environments/environment.prod.ts
+
+      - name: Build and deploy "client"
+        working-directory: client
+        run: npm run deploy
+
+      - name: Check if "Deploy" directory exists
+        run: |
+          ls -d Deploy
+          echo "Deploy directory exists."
+        continue-on-error: false
+
+      - name: Change directory to "Deploy"
+        run: cd Deploy
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.13.15
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          # healthcheck: "https://${{secrets.HEROKU_APP_NAME}}.herokuapp.com/health"
+          appdir: Deploy

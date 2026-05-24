@@ -1,14 +1,14 @@
 // Helpers:
 import { validDeposit, validId, validSearchQuery, validOldDeposit } from '../helpers/validator.helper';
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
-import { IExpressError } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
+import { IExpressError } from '@a3drian/spendit-shared';
 // Models:
 import { DepositModel } from '../schemas/deposit.schema';
 import { SearchQuery, SearchQueryMonthSort, SearchQuerySort, SearchQueryYearMonthSort, SortOption, SORT_OPTION } from '../models/search.model';
 // Shared:
 import { log } from '../shared/Logger';
-import { STATUS_CODES } from 'net-worth-shared';
+import { STATUS_CODES } from '@a3drian/spendit-shared';
 
 const CLASS_NAME = 'deposits.service.ts';
 

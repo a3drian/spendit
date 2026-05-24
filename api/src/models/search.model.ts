@@ -1,4 +1,4 @@
-import { ISearchOption, ISearchOptionDateRange } from 'net-worth-shared';
+import { ISearchOption, ISearchOptionDateRange } from '@a3drian/spendit-shared';
 
 export type SortOption = 'asc' | 'desc';
 

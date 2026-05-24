@@ -1,6 +1,6 @@
 import { Router, Response, Request, NextFunction } from 'express';
 // Shared:
-import { STATUS_CODES } from 'net-worth-shared';
+import { STATUS_CODES } from '@a3drian/spendit-shared';
 
 export { setHealthCheckRoute };
 

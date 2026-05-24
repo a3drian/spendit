@@ -1,12 +1,19 @@
 {
-	"name": "net-worth-api",
+	"name": "spendit-api",
 	"version": "1.0.0",
-	"description": "Database management API for NetWorth",
-	"repository": {},
+	"description": "Database management API for Spendit",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/a3drian/spendit.git"
+	},
 	"author": "a3drian",
 	"license": "ISC",
 	"private": true,
 	"main": "index.js",
+	"engines": {
+		"node": "20.x",
+		"npm": "10.x"
+	},
 	"scripts": {
 		"prebuild": "npm run type:check && npm run lint",
 		"lint:prettier": "npx prettier --check .",
@@ -14,14 +21,18 @@
 		"lint": "npm run lint:ts",
 		"build:tsc": "npm run type:check && tsc",
 		"build": "npm run build:tsc",
+		"start:debug": "npm run type:check && npm run ts:node:debug",
 		"start:tsc": "npm run type:check && npm run ts:node:dev",
 		"ts:node:dev": "ts-node-dev --watch -- src/index",
 		"ts:node:debug": "ts-node-dev --inspect --watch -- src/index",
-		"start:debug": "npm run type:check && npm run ts:node:debug",
 		"type:check": "tsc --noEmit --project .",
-		"deploy": "npm run build"
+		"deploy": "npm run build && node build",
+		"start": "node src/index.js"
 	},
 	"dependencies": {
+		"@a3drian/spendit-shared": "^1.0.12",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
 		"express": "^4.18.1",
 		"firebase-admin": "^11.11.0",
 		"mongoose": "^6.3.4"
@@ -32,11 +43,8 @@
 		"@types/node": "^17.0.35",
 		"@typescript-eslint/eslint-plugin": "^5.26.0",
 		"@typescript-eslint/parser": "^5.26.0",
-		"cors": "^2.8.5",
-		"dotenv": "^16.0.1",
 		"eslint": "^8.16.0",
 		"eslint-plugin-import": "^2.26.0",
-		"net-worth-shared": "file:../net-worth-shared/bin/net-worth-shared.tgz",
 		"ts-node-dev": "^2.0.0",
 		"typescript": "^4.7.2"
 	}

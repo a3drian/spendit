@@ -1,7 +1,7 @@
 const ObjectId = require('mongoose').Types.ObjectId;
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
-import { ISearchOption } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
+import { ISearchOption } from '@a3drian/spendit-shared';
 // Shared:
 import { log } from '../shared/Logger';
 

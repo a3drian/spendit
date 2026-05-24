@@ -1,13 +1,13 @@
 import { Router, Response, Request, NextFunction } from 'express';
 // Models:
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 import { Deposit } from '../models/deposit.model';
 import { SearchQuery, SearchQueryMonthSort, SearchQuerySort, SearchQueryYearMonthSort, SORT_OPTION } from '../models/search.model';
 // Services:
 import * as depositService from '../services/deposits.service';
 // Shared:
 import { log } from '../shared/Logger';
-import { STATUS_CODES } from 'net-worth-shared';
+import { STATUS_CODES } from '@a3drian/spendit-shared';
 
 const CLASS_NAME = 'spend.route.ts';
 

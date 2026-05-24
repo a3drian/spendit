@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // Interfaces:
-import { IDeposit } from 'net-worth-shared';
+import { IDeposit } from '@a3drian/spendit-shared';
 // Models:
 import { SearchOption, SearchOptionYearMonth } from '../models/SearchOption';
 // rxjs:

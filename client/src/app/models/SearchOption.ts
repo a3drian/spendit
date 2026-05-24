@@ -1,4 +1,4 @@
-import { ISearchOption } from 'net-worth-shared';
+import { ISearchOption } from '@a3drian/spendit-shared';
 
 export class SearchOption implements ISearchOption {
 	owner!: string;

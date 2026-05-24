@@ -1,5 +1,5 @@
 {
-  "name": "net-worth",
+  "name": "spendit",
   "version": "0.0.0",
   "repository": {},
   "author": "a3drian",
@@ -20,6 +20,7 @@
     "deploy": "npm run build"
   },
   "dependencies": {
+    "@a3drian/spendit-shared": "^1.0.12",
     "@angular/animations": "^16.2.10",
     "@angular/cdk": "^16.2.10",
     "@angular/common": "^16.2.10",
@@ -31,7 +32,6 @@
     "@angular/platform-browser": "^16.2.10",
     "@angular/platform-browser-dynamic": "^16.2.10",
     "@angular/router": "^16.2.10",
-    "net-worth-shared": "file:../net-worth-shared/bin/net-worth-shared.tgz",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
     "zone.js": "^0.13.3"

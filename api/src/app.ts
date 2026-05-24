@@ -7,7 +7,7 @@ import { Application, Router, Request, Response, NextFunction } from 'express';
 // Environment:
 import { env } from './env';
 // Interfaces:
-import { IExpressError } from 'net-worth-shared';
+import { IExpressError } from '@a3drian/spendit-shared';
 // Routes:
 import { setClientRoute } from './routes/client.route';
 import { setHealthCheckRoute } from './routes/health-check.route';
@@ -16,7 +16,7 @@ import { setSpendRoute } from './routes/spend.route';
 import { verifyJWT } from './services/auth.service';
 // Shared:
 import { Constants } from './shared/Constants';
-import { ERROR_MESSAGES, STATUS_CODES } from 'net-worth-shared';
+import { ERROR_MESSAGES, STATUS_CODES } from '@a3drian/spendit-shared';
 import { log } from './shared/Logger';
 
 let app: Application;

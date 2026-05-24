@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-const serviceAccount = require('../.service.account.json');
 // Shared:
 import { Constants } from './shared/Constants';
 import { log } from './shared/Logger';
@@ -15,15 +14,15 @@ if (Constants.IN_DEBUG_MODE === true) {
 	NODE_ENVIRONMENT = Constants.PRODUCTION_MODE;
 }
 
-const CLUSTER_URI: string = process.env.ENV_MONGO_URI ?
-	process.env.ENV_MONGO_URI : '';
+const CLUSTER_URI: string = process.env.ENV_MONGO_URI ?? '';
+const SERVICE_ACCOUNT: string = process.env.ENV_SERVICE_ACCOUNT ?? '';
 
 export const env = Object.freeze(
 	{
 		PORT: process.env.PORT || 8008,	// for compatibility with Heroku
 
 		NODE_ENV: NODE_ENVIRONMENT,
-		SERVICE_ACCOUNT: serviceAccount,
+		SERVICE_ACCOUNT: JSON.parse(SERVICE_ACCOUNT),
 
 		MONGO_URL: CLUSTER_URI,
 		DB_NAME: 'NetWorthDb',
