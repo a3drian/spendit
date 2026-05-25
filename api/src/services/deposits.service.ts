@@ -49,7 +49,7 @@ async function getDepositById(
 
 	try {
 
-		const deposit: IDeposit | null = await DepositModel.findById({ _id: id });
+		const deposit: IDeposit | null = await DepositModel.findById(id);
 
 		if (deposit === null) { return throwError(getDepositById.name, `Deposit '${id}' was not found!`, STATUS_CODES.NOT_FOUND); }
 
@@ -224,7 +224,7 @@ async function deleteDeposit(
 
 	try {
 
-		const deposit: IDeposit | null = await DepositModel.findByIdAndDelete({ _id: id });
+		const deposit: IDeposit | null = await DepositModel.findByIdAndDelete(id);
 
 		if (deposit === null) { return throwError(deleteDeposit.name, `Deposit '${id}' was not found and could not be deleted!`, STATUS_CODES.NOT_FOUND); }
 

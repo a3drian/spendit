@@ -1,4 +1,6 @@
-const ObjectId = require('mongoose').Types.ObjectId;
+import { Types } from 'mongoose';
+
+const { ObjectId } = Types;
 // Interfaces:
 import { IDeposit } from '@a3drian/spendit-shared';
 import { ISearchOption } from '@a3drian/spendit-shared';

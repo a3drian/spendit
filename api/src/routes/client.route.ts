@@ -1,4 +1,4 @@
-const path = require('path');
+import path from 'path';
 import { Router, Response, Request, NextFunction } from 'express';
 import { env } from '../env';
 

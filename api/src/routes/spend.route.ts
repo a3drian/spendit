@@ -11,6 +11,14 @@ import { STATUS_CODES } from '@a3drian/spendit-shared';
 
 const CLASS_NAME = 'spend.route.ts';
 
+function routeParam(param: string | string[] | undefined): string {
+	if (param === undefined) {
+		return '';
+	}
+
+	return Array.isArray(param) ? param[0] : param;
+}
+
 export { setSpendRoute };
 
 function setSpendRoute(router: Router): Router {
@@ -31,7 +39,7 @@ async function getDepositById(
 	next: NextFunction
 ): Promise<IDeposit | void | any> {
 
-	const id = req.params.id;
+	const id = routeParam(req.params.id);
 
 	let response: Error | IDeposit;
 	try {
@@ -221,7 +229,7 @@ async function putDeposit(
 ): Promise<IDeposit | void | any> {
 	log(CLASS_NAME, putDeposit.name, '');
 
-	const id = req.params.id;
+	const id = routeParam(req.params.id);
 	const body = req.body;
 
 	log(CLASS_NAME, putDeposit.name, 'body:', body);
@@ -260,7 +268,7 @@ async function deleteDeposit(
 	next: NextFunction
 ): Promise<void | any> {
 
-	const id = req.params.id;
+	const id = routeParam(req.params.id);
 
 	let response: Error | IDeposit;
 	try {
